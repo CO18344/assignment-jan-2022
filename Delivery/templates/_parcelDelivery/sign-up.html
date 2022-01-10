@@ -1,0 +1,90 @@
+{% extends '_parcelDelivery/form.html' %}
+{% load static %}
+{% block formTitle %}Sign Up{% endblock formTitle %}
+
+{% block messagesBlock %}
+
+{% if messages %}
+    <div class="navCustom">
+        {% for message in messages %}
+            
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+            <ul class="errorlist">
+                <li>
+                    {{message}}
+                </li>
+            </ul>
+        {% else %}
+        <ul class="form-success">
+            <li>
+                {{message}}
+            </li>
+        </ul>
+        {% endif %}
+
+        {% endfor %}
+        <img src="https://img.icons8.com/emoji/48/000000/cross-mark-emoji.png"/>
+    </div>
+{% endif %}
+
+{% endblock messagesBlock %}
+
+{% block formUrl %}/parcel/create/{% endblock formUrl %}
+
+{% block formHeader %}
+<img src="{% static 'css/delivery-icon.png' %}" width="90" height="90"/>
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+{% endblock formHeader %}
+
+{% block formFields %}
+    <div class="form-floating">
+        <input type="email" class="form-control" id="mailId" name="email" placeholder="Type email id here..." required>                
+        <label for="mailId">Email</label>
+    </div>
+
+    <div class="form-floating">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Type your name here..." required>
+        <label for="name">Name</label>
+    </div>        
+    
+    
+    <div class="form-floating">
+        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Type your mobile number" required>
+        <label for="phone">Phone number</label>
+    </div>
+    
+    <div class="form-floating">
+        <input type="text" class="form-control" id="country" name="country" placeholder="e.g. India" required>
+        <label for="country">Country</label>
+    </div>
+
+    <div class="form-floating">
+        <input type="text" class="form-control" id="state" name="state" placeholder="e.g. Punjab" required>
+        <label for="state">State</label>
+    </div>
+
+    <div class="form-floating">
+        <input type="text" class="form-control" id="city" name="city" placeholder="e.g. Chandigarh" required>
+        <label for="city">City</label>
+    </div>
+
+    <div class="form-floating">
+        <input type="text" class="form-control" id="zip" name="zipCode" placeholder="e.g. 220619" required>
+        <label for="zip">ZipCode</label>
+    </div>
+
+    <div class="form-floating">
+        <input type="password" class="form-control" id="pwd" name="password" placeholder="Type your password here..." required>
+        <label for="pwd">Password</label>
+    </div>
+
+    <div class="form-floating">
+        <input type="password" class="form-control" id="cpwd" name="cpwd" placeholder="Type your password again..." required>
+        <label for="cpwd">Confirm Password</label>
+    </div>
+{% endblock formFields %}
+
+{% block afterFields %}
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <p class="mt-2 text-muted">&copy; 2017–2022</p>
+{% endblock afterFields %}

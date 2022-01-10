@@ -1,0 +1,75 @@
+html,body{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    align-items: center;
+}
+.form-main {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-main .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-main input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+  
+.form-main input[name="cpwd"] {
+    margin-bottom: 15px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.navCustom img{
+    height: 25px;
+    float: right;
+    cursor: pointer;
+}
+
+.navCustom{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    transition: height 1000ms ease;
+    overflow: hidden;
+    background-color:  lightyellow;
+}
+
+.navCustom.active{
+    height: 0px;
+}
+
+ul.errorlist{
+    width: 80%;
+    margin: 0;
+    display: inline-block;
+    list-style-type: none;  
+}
+
+ul.errorlist li{
+    font-weight: bold;
+    color: red;
+}
+
+ul.form-success{
+    width: 80%;
+    margin: 0;
+    display: inline-block;
+    list-style-type: none;  
+}
+
+ul.form-success li{
+    font-weight: bold;
+    color: green;
+}
