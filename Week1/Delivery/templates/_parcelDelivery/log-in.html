@@ -1,0 +1,66 @@
+{% extends '_parcelDelivery/form.html' %}
+{% load static %}
+{% block formTitle %}Log in{% endblock formTitle %}
+
+{% block styles %}
+
+.form-main input[name="password"] {
+    margin-bottom: 15px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+{% endblock styles %}
+
+{% block messagesBlock %}
+    {% if messages %}
+        <div class="navCustom">
+            {% for message in messages %}
+                
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+ 
+                <ul class="errorlist">
+                    <li>
+                        {{message}}
+                    </li>
+                </ul>
+   
+            {% else %}
+            <ul class="form-success">
+                <li>
+                    {{message}}
+                </li>
+            </ul>
+            {% endif %}
+
+            {% endfor %}
+            <img src="https://img.icons8.com/emoji/48/000000/cross-mark-emoji.png"/>
+        </div>
+    {% endif %}
+
+
+{% endblock messagesBlock %}
+
+{% block formUrl %}/parcel/login/{% endblock formUrl %}
+
+{% block formHeader %}
+    <img src="{% static 'css/delivery-icon.png' %}" width="90" height="90"/>
+    <h1 class="h3 mb-3 fw-normal">Log in</h1>
+{% endblock formHeader %}
+
+{% block formFields %}
+    <div class="form-floating">
+        <input type="email" class="form-control" id="mailId" name="email" placeholder="Type email id here..." required>                
+        <label for="mailId">Email</label>
+    </div>
+
+    <div class="form-floating">
+        <input type="password" class="form-control" id="pwd" name="password" placeholder="Type your password here..." required>
+        <label for="pwd">Password</label>
+    </div>
+{% endblock formFields %}
+
+{% block afterFields %}
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+{% endblock afterFields %}
